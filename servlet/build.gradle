@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.5'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    // 기본 Spring Boot 기능 (로그, 구성 등)
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // 웹 기능: REST API, DispatcherServlet, 톰캣 내장 등 포함
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // 서블릿 컴포넌트 등록 (WebServlet, WebFilter, WebListener)
+    // → spring-boot-starter-web에 이미 servlet-api 포함되어 있음
+
+    // Lombok: 코드 축약용 (선택)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // DevTools 🔥
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

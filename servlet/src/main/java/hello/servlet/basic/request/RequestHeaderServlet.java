@@ -9,11 +9,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/*
- * 이 서블릿은 /request-header 경로로 들어오는 요청을 처리한다.
- */
 @WebServlet(name = "requestHeaderServlet", urlPatterns = "/request-header")
 public class RequestHeaderServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -34,12 +36,16 @@ public class RequestHeaderServlet extends HttpServlet {
 		System.out.println("request.getMethod() = " + request.getMethod()); // GET
 		System.out.println("request.getProtocal() = " + request.getProtocol()); // HTTP/1.1
 		System.out.println("request.getScheme() = " + request.getScheme()); // http
+		
 		// http://localhost:8080/request-header
 		System.out.println("request.getRequestURL() = " + request.getRequestURL());
+		
 		// /request-test
 		System.out.println("request.getRequestURI() = " + request.getRequestURI());
+		
 		// username=hi
 		System.out.println("request.getQueryString() = " + request.getQueryString());
+		
 		System.out.println("request.isSecure() = " + request.isSecure()); // https 사용 유무
 		System.out.println("--- REQUEST-LINE - end ---");
 		System.out.println();

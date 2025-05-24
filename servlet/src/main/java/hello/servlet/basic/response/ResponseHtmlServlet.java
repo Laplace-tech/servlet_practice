@@ -12,7 +12,12 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "responseHtmlServlet", urlPatterns = "/response-html")
 public class ResponseHtmlServlet extends HttpServlet {
     
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
     protected void service(HttpServletRequest request, HttpServletResponse
     response) throws ServletException, IOException {
         
@@ -24,7 +29,7 @@ public class ResponseHtmlServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
         writer.println("<body>");
-        writer.println(" <div>안녕?</div>");
+        writer.println("<div>안녕?</div>");
         writer.println("</body>");
         writer.println("</html>");
     }

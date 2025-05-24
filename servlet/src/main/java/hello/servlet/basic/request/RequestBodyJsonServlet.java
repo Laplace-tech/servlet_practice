@@ -18,6 +18,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "requestBodyJsonServlet", urlPatterns = "/request-bodyjson")
 public class RequestBodyJsonServlet extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override

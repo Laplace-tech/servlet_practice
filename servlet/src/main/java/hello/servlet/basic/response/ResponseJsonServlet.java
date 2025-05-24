@@ -18,6 +18,10 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "responseJsonServlet", urlPatterns = "/response-json")
 public class ResponseJsonServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ObjectMapper objectMapper = new ObjectMapper();
 
 	@Override

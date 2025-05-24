@@ -24,18 +24,24 @@ dependencies {
     // 웹 기능: REST API, DispatcherServlet, 톰캣 내장 등 포함
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // 서블릿 컴포넌트 등록 (WebServlet, WebFilter, WebListener)
-    // → spring-boot-starter-web에 이미 servlet-api 포함되어 있음
-
     // Lombok: 코드 축약용 (선택)
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
     // DevTools 🔥
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    
     // 테스트
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    
+     // JSP 관련 의존성
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0' // 필요 시 명시
+    implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.0.0' // JSP API
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1' // JSTL (선택)
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+
 }
 
 

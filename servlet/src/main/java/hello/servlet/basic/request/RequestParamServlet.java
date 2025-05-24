@@ -20,11 +20,16 @@ import jakarta.servlet.http.HttpServletResponse;
  * 
  * 위의 두 방식은 클라이언트 입장에서는 차이가 있지만 서버 입장에서는 동일함
  * 
- * 3. POST 방식 (API 전송): 메세지 바디에 JSON  같은 포맷으로 직접 데이터를 담아 전송
+ * 3. POST 방식 (API 전송): 메세지 바디에 JSON 같은 포맷으로 직접 데이터를 담아 전송
  */
 
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
